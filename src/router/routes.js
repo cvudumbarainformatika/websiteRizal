@@ -56,6 +56,11 @@ const routes = [
         path: 'pengaturan',
         name: 'admin-settings',
         component: () => import('pages/admin/SettingsPage.vue')
+      },
+      {
+        path: 'accounts',
+        name: 'admin-accounts',
+        component: () => import('pages/admin/AccountManagementPage.vue')
       }
     ]
   },

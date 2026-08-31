@@ -96,6 +96,13 @@
           <q-item-section>Kelola Armada</q-item-section>
         </q-item>
 
+        <q-item clickable v-ripple to="/setset/accounts" active-class="bg-warning/20 text-warning font-bold" class="rounded-xl mx-2 mb-1 transition-all duration-300 hover:bg-white/5">
+          <q-item-section avatar min-width="40px">
+            <q-icon name="manage_accounts" size="22px" />
+          </q-item-section>
+          <q-item-section class="text-[14px] font-medium tracking-wide">Kelola Akun</q-item-section>
+        </q-item>
+
         <q-item clickable v-ripple to="/setset/ulasan" active-class="bg-dark-surface text-primary-gold">
           <q-item-section avatar>
             <q-icon name="rate_review" />
