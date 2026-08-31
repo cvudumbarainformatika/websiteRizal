@@ -219,7 +219,18 @@ const fetchUsers = async () => {
 
     const headers = await getHeaders()
     const response = await axios.get('/api/manage-users', { headers })
-    users.value = response.data.users
+    
+    // Validasi respons: Cegah error saat dijalankan di local dev server (yang me-return HTML index.html)
+    if (response.data && Array.isArray(response.data.users)) {
+      users.value = response.data.users
+    } else if (response.data && Array.isArray(response.data)) {
+      // In case Vercel API directly returns array
+      users.value = response.data
+    } else if (response.data && Array.isArray(response.data.data?.users)) {
+      users.value = response.data.data.users
+    } else {
+      throw new Error('API Vercel tidak tersedia di lokal. Silakan tes di Vercel.')
+    }
   } catch (error) {
     console.error('Fetch users error:', error)
     if (error.response?.data?.error) {
