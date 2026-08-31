@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Global App Styling (SCSS)
+@import './colors.scss';
+@import './theme.scss';
+@import './customs.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   GLOBAL COMPONENT CLASSES (Keep some specific non-tailwind classes if needed)
+   ========================================================================== */
+
+.pb-mobile-nav {
+  padding-bottom: 80px;
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
+}

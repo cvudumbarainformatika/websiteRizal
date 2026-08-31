@@ -1,0 +1,133 @@
+/* ==========================================================================
+   ACCESSIBILITY STYLE SYSTEM - MASTER RIZAL RENT CAR & MOTOR BIKE
+   ========================================================================== */
+
+/* 1. Profil Aman untuk Kejang (Seizure Safe) */
+html.acc-seizure-safe {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2. Profil Low Vision / Keterbacaan Tinggi */
+html.acc-low-vision {
+  body {
+    font-weight: 700 !important;
+  }
+  p, span, h1, h2, h3, h4, h5, h6, a, button {
+    letter-spacing: 0.03em !important;
+  }
+}
+
+/* 3. High Contrast Mode */
+html.acc-high-contrast {
+  filter: contrast(140%) !important;
+
+  body {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+  }
+
+  .bg-white, .bg-slate-50, .bg-slate-100 {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #334155 !important;
+  }
+
+  a, button {
+    color: #38bdf8 !important;
+  }
+}
+
+/* 4. Grayscale (Monokrom) */
+html.acc-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* 5. Invert Colors */
+html.acc-invert {
+  filter: invert(90%) hue-rotate(180deg) !important;
+  img, video, picture, iframe {
+    filter: invert(100%) hue-rotate(180deg) !important;
+  }
+}
+
+/* 6. Big Cursor (Kursor Besar) */
+html.acc-big-cursor {
+  &, &, * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='%230d9488' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M3 3l7 18 3-7 7-3L3 3z'/%3E%3C/svg%3E"), auto !important;
+  }
+}
+
+/* 7. Profil Disabilitas Motorik (Batas Fokus Keyboard Tebal) */
+html.acc-motor-impaired {
+  *:focus-visible,
+  *:focus {
+    outline: 3px solid #0d9488 !important;
+    outline-offset: 4px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 0 6px rgba(13, 148, 136, 0.25) !important;
+  }
+}
+
+/* 8. Font Keterbacaan Dyslexia */
+html.acc-dyslexia-font {
+  body, p, span, a, h1, h2, h3, h4, h5, h6, button, input, textarea {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', 'Trebuchet MS', sans-serif !important;
+  }
+}
+
+/* 9. ADHD Focus Overlay Mask — hanya highlight elemen interaktif & teks bermakna */
+html.acc-adhd-focus {
+  p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+  a:hover, button:hover, li:hover, label:hover, td:hover, th:hover,
+  [role="button"]:hover, [role="link"]:hover {
+    outline: 2px dashed #06b6d4 !important;
+    outline-offset: 3px !important;
+    border-radius: 3px !important;
+  }
+}
+
+/* 10. Reading Line Guide (Garis Penuntun Baca) */
+#acc-reading-line-guide {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d9488 0%, #06b6d4 100%);
+  box-shadow: 0 0 12px rgba(13, 148, 136, 0.6);
+  pointer-events: none;
+  z-index: 999999;
+  transition: top 0.05s linear;
+}
+
+/* Hide Google Translate Top Banner & Tooltip Frame */
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 11. Speech Reader — Hover Highlight untuk Mode Tunanetra (Profil Audio)
+   Memberikan visual outline bersih dan profesional pada elemen teks yang sedang dibaca (0px Layout Shift) */
+.acc-speech-hover {
+  outline: 2px dashed #2563eb !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+  background-color: rgba(37, 99, 235, 0.08) !important;
+  transition: none !important;
+}

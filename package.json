@@ -1,0 +1,39 @@
+{
+  "name": "master-rizal-rent-car",
+  "version": "1.0.0",
+  "description": "Website Master Rizal Rent Car & Motor Bike Banyuwangi",
+  "productName": "MasterRizalRentCar",
+  "author": "Master Rizal <info@masterrizal.com>",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint": "eslint --ext .js,.vue ./"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.9",
+    "@supabase/supabase-js": "^2.112.4",
+    "axios": "^1.6.8",
+    "lodash": "^4.17.21",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "quasar": "^2.14.6",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^2.1.4",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.5.4",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.22.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.19",
+    "vite": "^5.1.6"
+  },
+  "engines": {
+    "node": "^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4"
+  }
+}

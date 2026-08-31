@@ -1,0 +1,117 @@
+// =================================================================
+// GLOBAL COLOR TOKENS & CLASSES (WAJIB DIDAFTARKAN DI SINI)
+// =================================================================
+
+:root {
+  // Brand Gold Palette
+  --color-primary-gold: #F5B800;
+  --color-primary-gold-hover: #E0A700;
+  --color-primary-gold-light: #FFF8E6;
+  --color-primary-gold-dark: #B88A00;
+
+  // Dark Theme Palette
+  --color-dark-bg: #12161A;
+  --color-dark-surface: #1A1F26;
+  --color-dark-card: #20262E;
+  --color-dark-border: #2E3642;
+
+  // Light Theme Palette
+  --color-light-bg: #F8F9FA;
+  --color-light-surface: #FFFFFF;
+  --color-light-border: #E9ECEF;
+
+  // Text Palette
+  --color-text-dark: #1E232A;
+  --color-text-muted: #6C757D;
+  --color-text-light: #FFFFFF;
+  --color-text-light-muted: #9CA3AF;
+  --color-text-gold: #EAA800;
+
+  // Status & Utility Colors
+  --color-whatsapp: #25D366;
+  --color-star-gold: #FFB800;
+}
+
+// -----------------------------------------------------------------
+// SCSS Variables for mixins/functions
+// -----------------------------------------------------------------
+$color-gold: #F5B800;
+$color-gold-hover: #E0A700;
+$color-dark-bg: #12161A;
+$color-dark-surface: #1A1F26;
+$color-dark-card: #20262E;
+$color-light-bg: #F8F9FA;
+$color-text-dark: #1E232A;
+
+// -----------------------------------------------------------------
+// GLOBAL UTILITY COLOR CLASSES
+// -----------------------------------------------------------------
+.bg-primary-gold {
+  background-color: var(--color-primary-gold) !important;
+  color: #12161A !important;
+}
+
+.bg-primary-gold-light {
+  background-color: var(--color-primary-gold-light) !important;
+}
+
+.text-primary-gold {
+  color: var(--color-primary-gold) !important;
+}
+
+.text-gold-accent {
+  color: var(--color-text-gold) !important;
+}
+
+.bg-dark-bg {
+  background-color: var(--color-dark-bg) !important;
+  color: var(--color-text-light) !important;
+}
+
+.bg-dark-surface {
+  background-color: var(--color-dark-surface) !important;
+  color: var(--color-text-light) !important;
+}
+
+.bg-dark-card {
+  background-color: var(--color-dark-card) !important;
+  color: var(--color-text-light) !important;
+  border: 1px solid var(--color-dark-border);
+}
+
+.bg-light-bg {
+  background-color: var(--color-light-bg) !important;
+}
+
+.bg-light-surface {
+  background-color: var(--color-light-surface) !important;
+}
+
+.text-custom-dark {
+  color: var(--color-text-dark) !important;
+}
+
+.text-custom-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.text-custom-light {
+  color: var(--color-text-light) !important;
+}
+
+.text-custom-light-muted {
+  color: var(--color-text-light-muted) !important;
+}
+
+.bg-whatsapp {
+  background-color: var(--color-whatsapp) !important;
+  color: #FFFFFF !important;
+}
+
+.text-whatsapp {
+  color: var(--color-whatsapp) !important;
+}
+
+.text-star-gold {
+  color: var(--color-star-gold) !important;
+}
