@@ -18,15 +18,37 @@
 </template>
 
 <script setup>
-import { ref, inject } from 'vue'
+import { ref, inject, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMeta } from 'quasar'
+import { supabase } from 'src/utils/supabase'
 import AppFooter from 'components/global/AppFooter.vue'
 import AppBottomNav from 'components/global/AppBottomNav.vue'
 
 const globalSettings = inject('globalSettings', ref({}))
 const router = useRouter()
 const transitionName = ref('slide-ios')
+
+const trackVisit = async () => {
+  try {
+    let sessionId = sessionStorage.getItem('visitor_session_id')
+    if (!sessionId) {
+      sessionId = Math.random().toString(36).substring(2, 15)
+      sessionStorage.setItem('visitor_session_id', sessionId)
+      
+      await supabase.from('page_views').insert({
+        path: window.location.pathname,
+        session_id: sessionId
+      })
+    }
+  } catch (error) {
+    // Silent fail for tracker
+  }
+}
+
+onMounted(() => {
+  trackVisit()
+})
 
 // Konfigurasi SEO Dasar & Schema.org (SSR Ready)
 useMeta(() => {
