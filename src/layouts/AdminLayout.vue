@@ -45,8 +45,8 @@
             <q-menu class="rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100 mt-2" :offset="[0, 8]">
               <q-list style="min-width: 180px" class="p-1">
                 <div class="px-4 py-3 border-b border-gray-100 mb-1">
-                  <div class="text-[13px] font-bold text-gray-900">Admin Master</div>
-                  <div class="text-[11px] text-gray-500 font-medium">admin@masterrizal.com</div>
+                  <div class="text-[13px] font-bold text-gray-900 capitalize">{{ adminName }}</div>
+                  <div class="text-[11px] text-gray-500 font-medium">{{ adminEmail }}</div>
                 </div>
                 <q-item clickable v-close-popup @click="handleLogout" class="rounded-lg mx-1 hover:bg-red-50 text-red-600 transition-colors">
                   <q-item-section avatar min-width="40px">
@@ -126,7 +126,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from 'src/utils/supabase'
 import { useQuasar } from 'quasar'
@@ -134,6 +134,17 @@ import { useQuasar } from 'quasar'
 const leftDrawerOpen = ref(true)
 const router = useRouter()
 const $q = useQuasar()
+
+const adminEmail = ref('Memuat...')
+const adminName = ref('Admin')
+
+onMounted(async () => {
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) {
+    adminEmail.value = user.email
+    adminName.value = user.email.split('@')[0]
+  }
+})
 
 const handleLogout = async () => {
   try {
