@@ -60,15 +60,16 @@ export default async function handler(req, res) {
     
     else if (req.method === 'POST') {
       // Create user
-      const { email, password } = req.body
-      if (!email || !password) {
-        return res.status(400).json({ error: 'Email and password required' })
+      const { email, password, name } = req.body
+      if (!email || !password || !name) {
+        return res.status(400).json({ error: 'Nama, Email, dan Password wajib diisi' })
       }
 
       const { data: user, error } = await supabaseAdmin.auth.admin.createUser({
         email,
         password,
-        email_confirm: true
+        email_confirm: true,
+        user_metadata: { name }
       })
 
       if (error) throw error
