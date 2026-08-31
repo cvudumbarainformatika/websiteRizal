@@ -68,7 +68,7 @@
         </div>
         <!-- Black Xpander Image Absolute positioned to right -->
         <div class="absolute -right-8 top-1/2 -translate-y-1/2 w-[240px] h-auto z-0 pointer-events-none">
-          <img src="/src/assets/images/car_xpander.jpg" alt="Sewa Mobil Jangka Panjang Probolinggo" class="w-full h-full object-contain mix-blend-multiply brightness-110 contrast-125" />
+          <img src="/assets/images/car_xpander.jpg" alt="Sewa Mobil Jangka Panjang Probolinggo" class="w-full h-full object-contain mix-blend-multiply brightness-110 contrast-125" />
         </div>
       </div>
     </div>

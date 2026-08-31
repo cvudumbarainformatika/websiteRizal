@@ -40,7 +40,7 @@
 
           <q-btn flat dense round class="q-mr-xs hover:scale-105 transition-transform">
             <q-avatar size="38px" class="shadow-md border-2 border-white bg-gray-100">
-              <img src="/src/assets/images/user-avatar.svg" />
+              <img src="/assets/images/user-avatar.svg" />
             </q-avatar>
             <q-menu class="rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100 mt-2" :offset="[0, 8]">
               <q-list style="min-width: 180px" class="p-1">

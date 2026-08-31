@@ -5,7 +5,7 @@
       
       <!-- Background Image -->
       <div class="absolute inset-0 z-0 bg-black">
-        <div class="absolute inset-0 bg-cover bg-center opacity-70" :style="`background-image: url('${globalSettings.hero_banner || '/src/assets/images/hero_bg.jpg'}')`"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-70" :style="`background-image: url('${globalSettings.hero_banner || '/assets/images/hero_bg.jpg'}')`"></div>
         <!-- Gradient overlay: Dark at top, fading to transparent -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent"></div>
         <!-- Smooth White Fade at bottom -->

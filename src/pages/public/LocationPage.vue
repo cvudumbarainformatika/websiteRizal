@@ -12,7 +12,7 @@
       <!-- Peta Lokasi -->
       <div class="bg-white rounded-[24px] border border-gray-200 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-[10px] flex flex-col items-center">
         <div class="h-48 sm:h-64 w-full rounded-[16px] overflow-hidden relative cursor-pointer group mb-3" @click="openGoogleMaps">
-          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('/src/assets/images/map_preview.jpg')"></div>
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('/assets/images/map_preview.jpg')"></div>
           <div class="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors"></div>
         </div>
         <button class="w-full text-gray-900 bg-[#FFC107] font-extrabold text-[14px] py-3 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2" @click="openGoogleMaps">

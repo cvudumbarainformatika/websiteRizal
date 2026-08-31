@@ -10,7 +10,7 @@
         <template v-if="isHome">
           <!-- Home Header -->
           <div class="flex items-center gap-3 w-full">
-            <img :src="globalSettings.site_logo || '/src/assets/images/logo-mr-gold.png'" alt="MR Logo" class="w-[42px] h-[42px] object-contain mix-blend-screen -ml-1 drop-shadow-md" />
+            <img :src="globalSettings.site_logo || '/assets/images/logo-mr-gold.png'" alt="MR Logo" class="w-[42px] h-[42px] object-contain mix-blend-screen -ml-1 drop-shadow-md" />
             <div class="flex flex-col justify-center -mt-0.5">
               <span class="font-headline-md font-extrabold text-white leading-none text-[17px] tracking-tight">MASTER RIZAL</span>
               <span class="text-[9px] text-gray-200 tracking-[0.15em] mt-[3px] font-medium leading-none">RENT CAR & MOTOR BIKE</span>

@@ -23,9 +23,9 @@ CREATE POLICY "Settings can be deleted by authenticated users only" ON public.se
 
 -- 2. Masukkan data pengaturan awal (Seed Data)
 INSERT INTO public.settings (key, value, description) VALUES 
-('site_logo', '/src/assets/images/logo-mr-gold.png', 'Logo utama website di Header'),
+('site_logo', '/assets/images/logo-mr-gold.png', 'Logo utama website di Header'),
 ('site_favicon', '/favicon.ico', 'Icon kecil di tab browser'),
-('hero_banner', '/src/assets/images/hero_bg.jpg', 'Gambar latar belakang raksasa di Beranda'),
+('hero_banner', '/assets/images/hero_bg.jpg', 'Gambar latar belakang raksasa di Beranda'),
 ('hero_title', 'Sewa Kendaraan Probolinggo', 'Judul besar di Beranda'),
 ('hero_subtitle', 'Pilihan terbaik untuk sewa mobil dan motor di Probolinggo dengan harga terjangkau.', 'Subjudul di Beranda'),
 ('contact_wa', '+6281234567890', 'Nomor WhatsApp Admin'),

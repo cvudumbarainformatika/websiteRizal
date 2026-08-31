@@ -61,5 +61,5 @@
 import { inject, ref } from 'vue'
 
 const globalSettings = inject('globalSettings', ref({}))
-const logoPlaceholder = '/src/assets/images/logo-mr-gold.png'
+const logoPlaceholder = '/assets/images/logo-mr-gold.png'
 </script>

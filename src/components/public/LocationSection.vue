@@ -20,7 +20,7 @@
     <!-- Map Section -->
     <div class="bg-white rounded-[24px] p-[10px] border border-gray-200 shadow-[0_12px_40px_rgba(0,0,0,0.12)] flex flex-col items-center">
       <div class="h-44 w-full rounded-[16px] overflow-hidden relative cursor-pointer group mb-3" @click="openGoogleMaps">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('/src/assets/images/map_preview.jpg')"></div>
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('/assets/images/map_preview.jpg')"></div>
         <div class="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors"></div>
       </div>
       <button class="w-full text-[#FFC107] font-bold text-[14px] pb-2 pt-1 hover:opacity-80 transition-opacity" @click="openGoogleMaps">

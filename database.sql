@@ -34,8 +34,8 @@ CREATE POLICY "Users can delete own vehicles."
 
 -- Insert Data Dummy Awal
 INSERT INTO vehicles (name, type, price, image_url, transmission, capacity, features) VALUES
-('Toyota Avanza', 'mobil', 300000, '/src/assets/images/car_avanza.jpg', 'Manual / Matic', 7, '["AC Dingin", "Audio Bluetooth", "Bersih & Wangi"]'),
-('Toyota Innova Reborn', 'mobil', 500000, '/src/assets/images/car_innova.jpg', 'Manual / Matic', 7, '["Captain Seat", "AC Double Blower", "Suspensi Empuk"]'),
-('Mitsubishi Xpander', 'mobil', 350000, '/src/assets/images/car_xpander.jpg', 'Manual / Matic', 7, '["Desain Sporty", "Kabin Luas", "Irit BBM"]'),
-('Honda Vario 125', 'motor', 75000, '/src/assets/images/motor_vario.jpg', 'Matic', 2, '["2 Helm SNI", "Jas Hujan", "Terawat"]'),
-('Honda Beat Street', 'motor', 65000, '/src/assets/images/motor_beat.jpg', 'Matic', 2, '["2 Helm SNI", "Jas Hujan", "Lincah & Irit"]');
+('Toyota Avanza', 'mobil', 300000, '/assets/images/car_avanza.jpg', 'Manual / Matic', 7, '["AC Dingin", "Audio Bluetooth", "Bersih & Wangi"]'),
+('Toyota Innova Reborn', 'mobil', 500000, '/assets/images/car_innova.jpg', 'Manual / Matic', 7, '["Captain Seat", "AC Double Blower", "Suspensi Empuk"]'),
+('Mitsubishi Xpander', 'mobil', 350000, '/assets/images/car_xpander.jpg', 'Manual / Matic', 7, '["Desain Sporty", "Kabin Luas", "Irit BBM"]'),
+('Honda Vario 125', 'motor', 75000, '/assets/images/motor_vario.jpg', 'Matic', 2, '["2 Helm SNI", "Jas Hujan", "Terawat"]'),
+('Honda Beat Street', 'motor', 65000, '/assets/images/motor_beat.jpg', 'Matic', 2, '["2 Helm SNI", "Jas Hujan", "Lincah & Irit"]');
