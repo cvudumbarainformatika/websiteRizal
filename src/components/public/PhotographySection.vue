@@ -12,7 +12,7 @@
         <!-- Header -->
         <div class="flex items-center gap-1.5 mb-3">
           <q-icon name="camera_alt" size="16px" class="text-[#FFC107]" />
-          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Layanan Tambahan</span>
+          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Jasa Photo dan Video</span>
         </div>
         
         <h3 class="font-title-sm text-white font-black leading-[1.25] text-[24px] md:text-[32px] tracking-tight mb-3">
