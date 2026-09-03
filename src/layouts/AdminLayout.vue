@@ -110,6 +110,13 @@
           <q-item-section>Ulasan Pelanggan</q-item-section>
         </q-item>
 
+        <q-item clickable v-ripple to="/setset/dokumentasi" active-class="bg-dark-surface text-primary-gold">
+          <q-item-section avatar>
+            <q-icon name="photo_camera" />
+          </q-item-section>
+          <q-item-section>Galeri Karya</q-item-section>
+        </q-item>
+
         <q-separator dark class="q-my-md" />
 
         <q-item-label header class="text-custom-light-muted text-weight-bold">

@@ -27,6 +27,12 @@ const routes = [
         name: 'location-detail',
         component: () => import('pages/public/LocationPage.vue'),
         meta: { title: 'Lokasi & Kontak', depth: 2 }
+      },
+      {
+        path: 'dokumentasi',
+        name: 'dokumentasi-detail',
+        component: () => import('pages/public/PortfolioPage.vue'),
+        meta: { title: 'Galeri Karya', depth: 2 }
       }
     ]
   },
@@ -47,15 +53,23 @@ const routes = [
         name: 'admin-fleet',
         component: () => import('pages/admin/FleetPage.vue')
       },
-      {
-        path: 'ulasan',
-        name: 'admin-review',
-        component: () => import('pages/admin/ReviewPage.vue')
+      { 
+        path: 'ulasan', 
+        name: 'admin-ulasan',
+        component: () => import('pages/admin/ReviewPage.vue'), 
+        meta: { requiresAuth: true }
       },
-      {
-        path: 'pengaturan',
-        name: 'admin-settings',
-        component: () => import('pages/admin/SettingsPage.vue')
+      { 
+        path: 'dokumentasi', 
+        name: 'admin-dokumentasi',
+        component: () => import('pages/admin/PortfolioManagementPage.vue'), 
+        meta: { requiresAuth: true }
+      },
+      { 
+        path: 'pengaturan', 
+        name: 'admin-pengaturan',
+        component: () => import('pages/admin/SettingsPage.vue'), 
+        meta: { requiresAuth: true }
       },
       {
         path: 'accounts',
