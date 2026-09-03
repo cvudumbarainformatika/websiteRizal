@@ -1,18 +1,19 @@
 <template>
-  <section class="py-20 relative bg-gray-900 overflow-hidden">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1554046920-90dcac824af0?q=80&w=2000&auto=format&fit=crop" alt="Jasa Fotografer Profesional" class="w-full h-full object-cover opacity-20 object-center" loading="lazy" />
-      <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-transparent"></div>
-    </div>
+  <section class="px-5 flex flex-col max-w-4xl mx-auto w-full relative z-30 mb-10">
+    <div class="rounded-[24px] bg-gray-900 relative overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-8 md:p-12">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1554046920-90dcac824af0?q=80&w=2000&auto=format&fit=crop" alt="Jasa Fotografer Profesional" class="w-full h-full object-cover opacity-20 object-center" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-transparent"></div>
+      </div>
 
-    <!-- Abstract Decor -->
-    <div class="absolute top-1/4 -right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
-    <div class="absolute bottom-1/4 -left-20 w-72 h-72 bg-white rounded-full mix-blend-screen filter blur-[100px] opacity-5"></div>
+      <!-- Abstract Decor -->
+      <div class="absolute top-1/4 -right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+      <div class="absolute bottom-1/4 -left-20 w-72 h-72 bg-white rounded-full mix-blend-screen filter blur-[100px] opacity-5"></div>
 
-    <div class="max-w-4xl mx-auto px-5 w-full relative z-10">
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div class="w-full relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         <!-- Left Content -->
         <div class="w-full lg:w-1/2" data-aos="fade-up">
@@ -99,6 +100,7 @@
         </div>
 
       </div>
+    </div>
     </div>
   </section>
 </template>
