@@ -10,11 +10,11 @@
     </div>
 
     <!-- Filter -->
-    <div class="q-mb-md">
+    <div class="q-mb-md flex justify-center">
       <q-btn-group rounded unelevated class="bg-white border border-gray-200">
         <q-btn :class="filter === 'semua' ? 'bg-primary-gold text-dark' : 'text-gray-600'" label="Semua" @click="filter = 'semua'" />
-        <q-btn :class="filter === 'foto' ? 'bg-primary-gold text-dark' : 'text-gray-600'" label="Hanya Foto" @click="filter = 'foto'" />
-        <q-btn :class="filter === 'video' ? 'bg-primary-gold text-dark' : 'text-gray-600'" label="Hanya Video" @click="filter = 'video'" />
+        <q-btn :class="filter === 'foto' ? 'bg-primary-gold text-dark' : 'text-gray-600'" label="Foto" @click="filter = 'foto'" />
+        <q-btn :class="filter === 'video' ? 'bg-primary-gold text-dark' : 'text-gray-600'" label="Video" @click="filter = 'video'" />
       </q-btn-group>
     </div>
 
