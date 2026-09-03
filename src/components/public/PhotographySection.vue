@@ -11,7 +11,7 @@
     <div class="absolute top-1/4 -right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
     <div class="absolute bottom-1/4 -left-20 w-72 h-72 bg-white rounded-full mix-blend-screen filter blur-[100px] opacity-5"></div>
 
-    <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto px-5 w-full relative z-10">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         
         <!-- Left Content -->
