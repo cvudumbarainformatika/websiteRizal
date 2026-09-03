@@ -7,10 +7,13 @@
     <!-- 2. Daftar Armada Section (termasuk filter & CTA Jangka Panjang) -->
     <FleetSection />
 
-    <!-- 3. Ulasan / Testimoni Section -->
+    <!-- 3. Photography Service Section -->
+    <PhotographySection />
+
+    <!-- 4. Ulasan / Testimoni Section -->
     <TestimonialSection />
 
-    <!-- 4. Lokasi & Kontak Section -->
+    <!-- 5. Lokasi & Kontak Section -->
     <LocationSection />
   </main>
 </template>
@@ -19,6 +22,7 @@
 import AppHeader from 'components/global/AppHeader.vue'
 import HeroSection from 'components/public/HeroSection.vue'
 import FleetSection from 'components/public/FleetSection.vue'
+import PhotographySection from 'components/public/PhotographySection.vue'
 import TestimonialSection from 'components/public/TestimonialSection.vue'
 import LocationSection from 'components/public/LocationSection.vue'
 </script>
