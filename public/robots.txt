@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Jangan index halaman admin
+Disallow: /setset/
+Disallow: /setset/*
+Disallow: /api/
+
 Sitemap: https://masterrizal.com/sitemap.xml
