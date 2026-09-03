@@ -46,7 +46,7 @@
               activeFilter === 'foto' ? 'bg-yellow-500 text-gray-900 shadow-md' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
             ]"
           >
-            Foto Liburan
+            Foto
           </button>
           <button 
             @click="activeFilter = 'video'"
@@ -55,7 +55,7 @@
               activeFilter === 'video' ? 'bg-yellow-500 text-gray-900 shadow-md' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
             ]"
           >
-            Video Sinematik
+            Video
           </button>
         </div>
       </div>
