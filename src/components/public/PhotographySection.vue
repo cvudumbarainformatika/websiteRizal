@@ -12,7 +12,7 @@
         <!-- Header -->
         <div class="flex items-center gap-1.5 mb-3">
           <q-icon name="camera_alt" size="16px" class="text-[#FFC107]" />
-          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Layanan Eksklusif</span>
+          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Layanan Tambahan</span>
         </div>
         
         <h3 class="font-title-sm text-white font-black leading-[1.25] text-[24px] md:text-[32px] tracking-tight mb-3">
@@ -47,11 +47,11 @@
           <!-- Card 3 -->
           <div class="bg-white/[0.03] border border-white/10 rounded-[16px] p-5 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center sm:col-span-2 gap-4 hover:bg-white/[0.06] transition-colors">
             <div class="w-10 h-10 rounded-full bg-[#FFC107]/20 flex items-center justify-center shrink-0">
-              <q-icon name="favorite" size="20px" class="text-[#FFC107]" />
+              <q-icon name="groups" size="20px" class="text-[#FFC107]" />
             </div>
             <div>
-              <h4 class="text-white font-bold text-[15px] mb-1 tracking-tight">Pre-Wedding & Group Tour</h4>
-              <p class="text-gray-400 text-[12px] leading-[1.6]">Dokumentasi penuh untuk acara rombongan atau momen spesial Anda selama perjalanan.</p>
+              <h4 class="text-white font-bold text-[15px] mb-1 tracking-tight">Dokumentasi Rombongan & Jeep Bromo</h4>
+              <p class="text-gray-400 text-[12px] leading-[1.6]">Layanan dokumentasi penuh menggunakan drone dan kamera profesional untuk rombongan keluarga atau gathering instansi.</p>
             </div>
           </div>
         </div>
