@@ -28,12 +28,12 @@
             flat
             dense
             no-caps
-            class="text-[13px] font-bold text-gray-700 hover:bg-gray-100 rounded-[12px] px-4 py-2 transition-all hidden sm:flex"
+            class="text-[13px] font-bold text-gray-700 hover:bg-gray-100 rounded-[12px] px-2 md:px-4 py-2 transition-all flex"
             aria-label="Ke Website Publik"
             to="/"
           >
-            <q-icon name="open_in_new" size="18px" class="q-mr-sm" />
-            Website Publik
+            <q-icon name="open_in_new" size="18px" class="md:q-mr-sm" />
+            <span class="hidden md:block">Website Publik</span>
           </q-btn>
           
           <div class="w-[1px] h-6 bg-gray-200 hidden sm:block"></div>
