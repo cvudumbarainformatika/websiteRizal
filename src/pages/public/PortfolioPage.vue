@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-gray-50 pb-20">
+  <div class="w-full flex-grow flex flex-col bg-gray-50 pb-20 relative z-10 min-h-screen">
     <AppHeader />
     
     <!-- Hero Section -->
@@ -114,12 +114,12 @@
       </div>
 
       <!-- Empty State -->
-      <div v-if="!isLoading && filteredData.length === 0" class="text-center py-20">
-        <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <q-icon name="broken_image" size="48px" class="text-gray-400" />
+      <div v-if="!isLoading && filteredData.length === 0" class="text-center py-24 bg-white rounded-[24px] border border-gray-100 shadow-sm mt-8">
+        <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <q-icon name="photo_camera" size="48px" class="text-gray-300" />
         </div>
-        <h3 class="text-2xl font-black text-gray-900 mb-2">Karya Belum Tersedia</h3>
-        <p class="text-gray-500 max-w-md mx-auto">Kami sedang mempersiapkan konten-konten menarik untuk ditampilkan di kategori ini.</p>
+        <h3 class="text-2xl font-black text-gray-900 mb-3">Galeri Masih Kosong</h3>
+        <p class="text-gray-500 max-w-md mx-auto text-[15px] leading-relaxed">Admin belum mengunggah karya dokumentasi untuk kategori ini. Silakan kembali lagi nanti untuk melihat koleksi terbaru kami.</p>
       </div>
 
     </section>
@@ -134,7 +134,7 @@
       </div>
     </q-dialog>
 
-  </q-page>
+  </div>
 </template>
 
 <script setup>
