@@ -1,5 +1,23 @@
 <template>
-  <section class="px-5 flex flex-col max-w-4xl mx-auto w-full relative z-30 mb-10">
+  <section class="px-5 flex flex-col max-w-4xl mx-auto w-full relative z-30 mb-10 pt-4">
+    
+    <!-- HEADER (KONSISTEN DENGAN SECTION LAIN) -->
+    <div class="mb-6 px-1 md:px-4 flex items-end justify-between">
+      <div>
+        <h2 class="text-gray-900 font-black leading-[1.25] text-[26px] tracking-tight mb-2">
+          Jasa Photo &<br/>Video <span class="text-[#FFC107]">Profesional</span>
+        </h2>
+        <p class="font-body-md text-gray-500 text-[13px] leading-[1.6] max-w-[280px]">
+          Dokumentasikan momen liburan Anda dengan kualitas sinematik.
+        </p>
+      </div>
+      <button @click="router.push('/dokumentasi')" class="text-[#FFC107] font-bold text-[13px] flex items-center gap-1 hover:opacity-80 transition-opacity whitespace-nowrap pb-1">
+        Lihat Semua
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </button>
+    </div>
+
+    <!-- CARD KONTEN GELAP -->
     <div class="bg-[#1A1C19] rounded-[24px] p-6 md:p-10 relative overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
       
       <!-- Background Image with Overlay (Subtle) -->
@@ -9,23 +27,8 @@
       </div>
 
       <div class="relative z-10 flex flex-col">
-        <!-- Header -->
-        <div class="flex items-center gap-1.5 mb-3">
-          <q-icon name="camera_alt" size="16px" class="text-[#FFC107]" />
-          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Jasa Photo dan Video</span>
-        </div>
-        
-        <h3 class="font-title-sm text-white font-black leading-[1.25] text-[24px] md:text-[32px] tracking-tight mb-3">
-          Abadikan Momen <br/>
-          <span class="text-[#FDE047]">Perjalanan Anda.</span>
-        </h3>
-        
-        <p class="text-[13px] md:text-[14px] text-gray-400 leading-[1.6] mb-8 max-w-2xl font-body-md">
-          Jangan biarkan kenangan liburan Anda berlalu begitu saja. Kami menyediakan Jasa Fotografer & Videografer Profesional untuk mendokumentasikan setiap detik petualangan Anda (Bromo, Kawah Ijen, dll) dengan kualitas sinematik.
-        </p>
-
         <!-- The 3 Content Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <!-- Card 1 -->
           <div class="bg-white/[0.03] border border-white/10 rounded-[16px] p-5 backdrop-blur-sm flex flex-col hover:bg-white/[0.06] transition-colors">
             <div class="w-10 h-10 rounded-full bg-[#FFC107]/20 flex items-center justify-center shrink-0 mb-3">
@@ -56,15 +59,6 @@
           </div>
         </div>
         
-        <!-- CTA Button -->
-        <a 
-          :href="whatsappLink" 
-          target="_blank"
-          class="self-start bg-[#FFC107] text-gray-900 font-black text-[13px] py-3 px-6 rounded-[12px] hover:opacity-90 transition-opacity flex items-center gap-2 shadow-[0_4px_12px_rgba(255,193,7,0.3)]"
-        >
-          <q-icon name="chat" size="18px" />
-          Konsultasi Paket Kamera
-        </a>
       </div>
 
     </div>
@@ -72,14 +66,7 @@
 </template>
 
 <script setup>
-import { computed, inject, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-const globalSettings = inject('globalSettings', ref({}))
-
-const whatsappLink = computed(() => {
-  const num = globalSettings.value?.whatsapp_number || '+6285330222494'
-  const cleanNum = num.replace(/\D/g, '')
-  const msg = encodeURIComponent('Halo Master Rizal, saya tertarik dengan layanan Fotografer & Videografer untuk trip saya. Bisa minta info harganya?')
-  return `https://wa.me/${cleanNum}?text=${msg}`
-})
+const router = useRouter()
 </script>
