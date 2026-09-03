@@ -13,13 +13,13 @@
       <div class="relative z-10 max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
           <q-icon name="collections" size="20px" class="text-yellow-500" />
-          <span class="text-yellow-500 font-bold text-sm tracking-wide uppercase">Layanan Tambahan</span>
+          <span class="text-yellow-500 font-bold text-sm tracking-wide uppercase">Photo dan Video</span>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-4">
           Galeri <span class="text-yellow-500">Karya</span>
         </h1>
         <p class="text-gray-400 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-          Lihat langsung hasil dokumentasi epik perjalanan pelanggan kami di Bromo dan Kawah Ijen.
+          Lihat langsung hasil dokumentasi epik perjalanan luar biasa pelanggan kami di berbagai destinasi wisata.
         </p>
       </div>
     </section>
