@@ -6,4 +6,4 @@ Disallow: /setset/
 Disallow: /setset/*
 Disallow: /api/
 
-Sitemap: https://masterrizal.com/sitemap.xml
+Sitemap: https://www.masterrizal.com/sitemap.xml
