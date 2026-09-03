@@ -1,42 +1,70 @@
 <template>
   <section class="px-5 flex flex-col max-w-4xl mx-auto w-full relative z-30 mb-10">
-    <div class="bg-[#1A1C19] rounded-[20px] p-6 md:p-8 relative overflow-hidden flex flex-col justify-center min-h-[200px] shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
+    <div class="bg-[#1A1C19] rounded-[24px] p-6 md:p-10 relative overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
       
-      <!-- Content Left -->
-      <div class="relative z-10 w-[70%] md:w-2/3 flex flex-col justify-center">
-        <div class="flex items-center gap-1.5 mb-2">
-          <q-icon name="camera_alt" size="14px" class="text-[#FFC107]" />
-          <span class="text-[#FFC107] font-bold text-[10px] tracking-widest uppercase">Layanan Tambahan</span>
+      <!-- Background Image with Overlay (Subtle) -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1516362540502-42171ecba3a2?q=80&w=2000&auto=format&fit=crop" alt="Jasa Fotografer" class="w-full h-full object-cover opacity-[0.15] object-center mix-blend-luminosity" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1C19] via-[#1A1C19]/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 flex flex-col">
+        <!-- Header -->
+        <div class="flex items-center gap-1.5 mb-3">
+          <q-icon name="camera_alt" size="16px" class="text-[#FFC107]" />
+          <span class="text-[#FFC107] font-bold text-[12px] tracking-widest uppercase">Layanan Eksklusif</span>
         </div>
         
-        <h3 class="font-title-sm text-white font-black leading-[1.25] text-[20px] md:text-[24px] tracking-tight mb-1.5">
-          Abadikan Perjalanan <br/>
-          <span class="text-[#FDE047]">Liburan Anda.</span>
+        <h3 class="font-title-sm text-white font-black leading-[1.25] text-[24px] md:text-[32px] tracking-tight mb-3">
+          Abadikan Momen <br/>
+          <span class="text-[#FDE047]">Perjalanan Anda.</span>
         </h3>
         
-        <p class="text-[12px] md:text-[13px] text-gray-400 leading-[1.6] mb-5 max-w-[400px]">
-          Kami menyediakan Jasa Fotografer & Videografer Profesional untuk mendokumentasikan setiap momen liburan Anda (Bromo, Kawah Ijen, dll).
+        <p class="text-[13px] md:text-[14px] text-gray-400 leading-[1.6] mb-8 max-w-2xl font-body-md">
+          Jangan biarkan kenangan liburan Anda berlalu begitu saja. Kami menyediakan Jasa Fotografer & Videografer Profesional untuk mendokumentasikan setiap detik petualangan Anda (Bromo, Kawah Ijen, dll) dengan kualitas sinematik.
         </p>
+
+        <!-- The 3 Content Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <!-- Card 1 -->
+          <div class="bg-white/[0.03] border border-white/10 rounded-[16px] p-5 backdrop-blur-sm flex flex-col hover:bg-white/[0.06] transition-colors">
+            <div class="w-10 h-10 rounded-full bg-[#FFC107]/20 flex items-center justify-center shrink-0 mb-3">
+              <q-icon name="photo_camera" size="20px" class="text-[#FFC107]" />
+            </div>
+            <h4 class="text-white font-bold text-[15px] mb-1.5 tracking-tight">Fotografi Liburan</h4>
+            <p class="text-gray-400 text-[12px] leading-[1.6]">Hasil foto jernih, profesional, dan siap diunggah ke sosial media Anda.</p>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white/[0.03] border border-white/10 rounded-[16px] p-5 backdrop-blur-sm flex flex-col hover:bg-white/[0.06] transition-colors">
+            <div class="w-10 h-10 rounded-full bg-[#FFC107]/20 flex items-center justify-center shrink-0 mb-3">
+              <q-icon name="videocam" size="20px" class="text-[#FFC107]" />
+            </div>
+            <h4 class="text-white font-bold text-[15px] mb-1.5 tracking-tight">Video Sinematik</h4>
+            <p class="text-gray-400 text-[12px] leading-[1.6]">Rekaman drone & mirrorless untuk menghasilkan video trip yang epik.</p>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white/[0.03] border border-white/10 rounded-[16px] p-5 backdrop-blur-sm flex flex-col sm:flex-row sm:items-center sm:col-span-2 gap-4 hover:bg-white/[0.06] transition-colors">
+            <div class="w-10 h-10 rounded-full bg-[#FFC107]/20 flex items-center justify-center shrink-0">
+              <q-icon name="favorite" size="20px" class="text-[#FFC107]" />
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-[15px] mb-1 tracking-tight">Pre-Wedding & Group Tour</h4>
+              <p class="text-gray-400 text-[12px] leading-[1.6]">Dokumentasi penuh untuk acara rombongan atau momen spesial Anda selama perjalanan.</p>
+            </div>
+          </div>
+        </div>
         
+        <!-- CTA Button -->
         <a 
           :href="whatsappLink" 
           target="_blank"
-          class="self-start bg-[#FFC107] text-gray-900 font-black text-[12px] py-2.5 px-5 rounded-[10px] hover:opacity-90 transition-opacity flex items-center gap-2"
+          class="self-start bg-[#FFC107] text-gray-900 font-black text-[13px] py-3 px-6 rounded-[12px] hover:opacity-90 transition-opacity flex items-center gap-2 shadow-[0_4px_12px_rgba(255,193,7,0.3)]"
         >
-          <q-icon name="chat" size="16px" />
-          Konsultasi Paket
+          <q-icon name="chat" size="18px" />
+          Konsultasi Paket Kamera
         </a>
-      </div>
-
-      <!-- Image Absolute positioned to right -->
-      <div class="absolute -right-10 md:right-0 top-1/2 -translate-y-1/2 w-[200px] md:w-[320px] h-full z-0 pointer-events-none opacity-50 md:opacity-100 flex items-center justify-end">
-        <!-- Menggunakan mask image agar menyatu halus dengan background gelap -->
-        <img 
-          src="https://images.unsplash.com/photo-1516362540502-42171ecba3a2?q=80&w=600&auto=format&fit=crop" 
-          alt="Fotografer Liburan Bromo" 
-          class="w-full h-full object-cover rounded-l-full" 
-          style="mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);"
-        />
       </div>
 
     </div>
