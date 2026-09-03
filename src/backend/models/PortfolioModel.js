@@ -32,6 +32,17 @@ export default {
     return data[0]
   },
 
+  async update(id, payload) {
+    const { data, error } = await supabase
+      .from('portfolios')
+      .update(payload)
+      .eq('id', id)
+      .select()
+      
+    if (error) throw error
+    return data[0]
+  },
+
   async delete(id) {
     const { error } = await supabase
       .from('portfolios')

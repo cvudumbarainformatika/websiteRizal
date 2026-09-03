@@ -25,6 +25,20 @@ export default {
     }
   },
 
+  async updatePortfolio(id, payload) {
+    try {
+      if (!payload.title || !payload.category || !payload.media_url) {
+        throw new Error('Semua field (judul, kategori, url media) harus diisi.')
+      }
+      
+      const updatedPortfolio = await PortfolioModel.update(id, payload)
+      return { data: updatedPortfolio, error: null }
+    } catch (err) {
+      console.error('Error updating portfolio:', err.message)
+      return { data: null, error: err.message }
+    }
+  },
+
   async deletePortfolio(id) {
     try {
       await PortfolioModel.delete(id)

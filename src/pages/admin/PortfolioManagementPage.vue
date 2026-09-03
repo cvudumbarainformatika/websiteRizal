@@ -63,6 +63,7 @@
 
           <!-- Aksi -->
           <q-card-actions align="right" class="q-pt-none bg-gray-50/50 border-t border-gray-100 mt-auto">
+            <q-btn flat dense color="primary" icon="edit" size="sm" @click="openDialog(item)" label="Edit" class="q-mr-sm" />
             <q-btn flat dense color="negative" icon="delete" size="sm" @click="confirmDelete(item)" label="Hapus" />
           </q-card-actions>
         </q-card>
@@ -84,7 +85,7 @@
     <q-dialog v-model="dialogVisible" :position="$q.screen.lt.sm ? 'bottom' : 'standard'">
       <q-card :style="$q.screen.lt.sm ? 'width: 100%; border-radius: 20px 20px 0 0;' : 'min-width: 450px'">
         <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6 text-weight-bold">Tambah Karya</div>
+          <div class="text-h6 text-weight-bold">{{ form.id ? 'Edit Karya' : 'Tambah Karya' }}</div>
           <q-space />
           <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
@@ -146,6 +147,7 @@ const filter = ref('semua')
 
 const dialogVisible = ref(false)
 const form = ref({
+  id: null,
   title: '',
   category: 'foto',
   media_url: ''
@@ -179,8 +181,12 @@ const getYoutubeThumbnail = (url) => {
   return null
 }
 
-const openDialog = () => {
-  form.value = { title: '', category: 'foto', media_url: '' }
+const openDialog = (item = null) => {
+  if (item) {
+    form.value = { ...item }
+  } else {
+    form.value = { id: null, title: '', category: 'foto', media_url: '' }
+  }
   dialogVisible.value = true
 }
 
@@ -193,14 +199,29 @@ const saveData = async () => {
     return
   }
 
-  const { error } = await PortfolioController.addPortfolio(form.value)
+  let error = null
+  if (form.value.id) {
+    const res = await PortfolioController.updatePortfolio(form.value.id, {
+      title: form.value.title,
+      category: form.value.category,
+      media_url: form.value.media_url
+    })
+    error = res.error
+  } else {
+    const res = await PortfolioController.addPortfolio({
+      title: form.value.title,
+      category: form.value.category,
+      media_url: form.value.media_url
+    })
+    error = res.error
+  }
   
   isSaving.value = false
   
   if (error) {
     $q.notify({ type: 'negative', message: 'Gagal menyimpan: ' + error, position: 'top' })
   } else {
-    $q.notify({ type: 'positive', message: 'Karya berhasil ditambahkan!', position: 'top' })
+    $q.notify({ type: 'positive', message: 'Karya berhasil disimpan!', position: 'top' })
     dialogVisible.value = false
     await loadData()
   }
