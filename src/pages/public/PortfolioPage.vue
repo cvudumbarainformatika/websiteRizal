@@ -72,7 +72,7 @@
           
           <!-- FOTO PREVIEW -->
           <template v-if="item.category === 'foto'">
-            <div class="aspect-[4/3] w-full relative overflow-hidden bg-gray-100 cursor-pointer" @click="openImage(item.media_url)">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-gray-100 cursor-pointer" @click="openImage(item)">
               <img :src="item.media_url" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
               <!-- Hover Overlay -->
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -124,13 +124,31 @@
 
     </section>
 
-    <!-- Image Lightbox Dialog -->
-    <q-dialog v-model="lightboxOpen" maximized transition-show="fade" transition-hide="fade" class="bg-black/90">
-      <div class="w-full h-full flex flex-col relative p-4">
-        <q-btn icon="close" color="white" flat round class="absolute top-4 right-4 z-50 bg-black/50" v-close-popup size="lg" />
-        <div class="flex-grow flex items-center justify-center overflow-hidden">
-          <img :src="activeImage" class="max-w-full max-h-full object-contain drop-shadow-2xl" />
-        </div>
+    <!-- Image Lightbox Dialog (Carousel) -->
+    <q-dialog v-model="lightboxOpen" maximized transition-show="fade" transition-hide="fade" class="bg-black/95 backdrop-blur-md">
+      <div class="w-full h-full flex flex-col relative">
+        <!-- Close Button -->
+        <q-btn icon="close" color="white" flat round class="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/80 transition-colors" v-close-popup size="md" />
+        
+        <!-- Carousel -->
+        <q-carousel
+          v-model="activeSlide"
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          swipeable
+          animated
+          control-color="white"
+          navigation
+          arrows
+          class="bg-transparent flex-grow h-full w-full"
+        >
+          <q-carousel-slide v-for="img in photoList" :key="img.id" :name="img.id" class="p-0 flex items-center justify-center">
+            <div class="w-full h-full flex flex-col items-center justify-center p-4 pb-12">
+              <img :src="img.media_url" class="max-w-full max-h-[85vh] object-contain drop-shadow-2xl mb-4 rounded-lg" />
+              <div class="text-white text-center font-bold text-lg px-4">{{ img.title }}</div>
+            </div>
+          </q-carousel-slide>
+        </q-carousel>
       </div>
     </q-dialog>
 
@@ -147,7 +165,7 @@ const portfolios = ref([])
 const activeFilter = ref('semua')
 
 const lightboxOpen = ref(false)
-const activeImage = ref('')
+const activeSlide = ref('')
 
 onMounted(async () => {
   const { data } = await PortfolioController.fetchAll()
@@ -160,8 +178,13 @@ const filteredData = computed(() => {
   return portfolios.value.filter(p => p.category === activeFilter.value)
 })
 
-const openImage = (url) => {
-  activeImage.value = url
+const photoList = computed(() => {
+  // Only show photos in the lightbox
+  return portfolios.value.filter(p => p.category === 'foto')
+})
+
+const openImage = (item) => {
+  activeSlide.value = item.id
   lightboxOpen.value = true
 }
 
