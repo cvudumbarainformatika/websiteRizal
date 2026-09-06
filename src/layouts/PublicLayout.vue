@@ -53,8 +53,8 @@ onMounted(() => {
 // Konfigurasi SEO Dasar & Schema.org (SSR Ready)
 useMeta(() => {
   const siteName = globalSettings.value?.website_name || 'Master Rizal Rent Car & Motor Bike'
-  const desc = 'Layanan sewa mobil dan motor terbaik di Probolinggo. Unit terawat, harga bersahabat, pelayanan 24 jam.'
-  const logo = globalSettings.value?.site_logo || '/assets/images/logo-mr-gold.png'
+  const desc = 'Layanan sewa mobil dan motor terbaik di Probolinggo & Bromo. Unit terawat, harga bersahabat, pelayanan 24 jam.'
+  const logo = globalSettings.value?.site_logo || 'https://www.masterrizal.com/assets/images/og-image.jpg'
   const wa = globalSettings.value?.whatsapp_number || '+6285330222494'
   const address = globalSettings.value?.contact_address || 'Jl. Sukapura, Kota Probolinggo'
 
@@ -76,7 +76,6 @@ useMeta(() => {
       "ratingValue": "4.9",
       "reviewCount": "681"
     },
-    "priceRange": "Rp 60.000 - Rp 550.000",
     "openingHours": "Mo-Su 00:00-23:59"
   }
 
