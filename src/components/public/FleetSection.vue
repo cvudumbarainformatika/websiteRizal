@@ -24,9 +24,7 @@
         <div v-for="n in 3" :key="'skeleton-home-'+n" class="snap-start shrink-0 w-[220px] sm:w-[240px] bg-white rounded-[20px] border border-gray-100 shadow-sm overflow-hidden flex flex-col animate-pulse">
           <div class="w-full h-[150px] bg-gray-200 shrink-0"></div>
           <div class="p-4 pt-3 flex flex-col flex-grow">
-            <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-            <div class="h-3 bg-gray-100 rounded w-1/3 mb-2"></div>
-            <div class="h-5 bg-gray-200 rounded w-2/3 mb-5"></div>
+            <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
             <div class="mt-auto h-9 bg-gray-100 rounded-[12px] w-full"></div>
           </div>
         </div>
@@ -42,14 +40,16 @@
         </div>
         
         <!-- Bottom: Text Content -->
-        <div class="p-4 pt-3 flex flex-col flex-grow bg-white">
-          <h3 class="font-title-sm text-gray-900 font-extrabold text-[15px] leading-none mb-1 tracking-tight truncate">{{ vehicle.name }}</h3>
-          <p class="text-[11.5px] text-gray-400 font-medium mb-1">Mulai dari</p>
-          <div class="font-title-sm text-[#FFC107] font-black text-[15.5px] mb-5">
-            {{ formatRupiah(vehicle.price) }} <span class="text-[11px] text-gray-500 font-bold">/hari</span>
+        <div class="p-4 pt-3 flex flex-col flex-grow bg-white justify-between">
+          <div class="mb-4">
+            <h3 class="font-title-sm text-gray-900 font-extrabold text-[15.5px] leading-snug tracking-tight line-clamp-1">{{ vehicle.name }}</h3>
+            <span class="inline-block mt-1 text-[11px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md">
+              {{ vehicle.categories?.name || 'Unit Prima' }}
+            </span>
           </div>
-          <button class="mt-auto w-full bg-white text-gray-900 border-[1.5px] border-[#FFE48A] font-title-sm text-[13px] font-bold py-2.5 rounded-[12px] hover:bg-[#FFC107]/5 transition-colors" @click="handleBooking(vehicle.name)">
-            Lihat {{ vehicle.categories?.name || 'Armada' }}
+          <button class="mt-auto w-full bg-white text-gray-900 border-[1.5px] border-[#FFE48A] font-title-sm text-[13px] font-bold py-2.5 rounded-[12px] hover:bg-[#FFC107]/10 transition-colors flex items-center justify-center gap-1" @click="handleBooking(vehicle.name)">
+            Lihat Unit
+            <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
           </button>
         </div>
       </div>

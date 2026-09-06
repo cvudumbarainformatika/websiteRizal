@@ -21,12 +21,8 @@
               <div class="h-6 w-12 bg-gray-100 rounded-xl"></div>
             </div>
             <!-- Footer Skeleton -->
-            <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-              <div class="flex flex-col gap-1 w-1/3">
-                <div class="h-3 bg-gray-100 rounded-md w-1/2"></div>
-                <div class="h-5 bg-gray-200 rounded-md w-full"></div>
-              </div>
-              <div class="h-10 w-24 bg-gray-200 rounded-xl"></div>
+            <div class="mt-auto pt-4 border-t border-gray-50 flex items-center">
+              <div class="h-11 w-full bg-gray-200 rounded-xl"></div>
             </div>
           </div>
         </div>
@@ -78,19 +74,10 @@
               </template>
             </div>
 
-            <!-- Price & Button Footer -->
-            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
-              <!-- Price -->
-              <div class="flex flex-col">
-                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">Mulai dari</span>
-                <div class="font-title-sm text-gray-900 font-black text-[18px] leading-none">
-                  {{ formatRupiah(vehicle.price) }}<span class="text-[12px] text-gray-500 font-semibold font-body-md ml-0.5">/hari</span>
-                </div>
-              </div>
-              
-              <!-- Clean Button -->
-              <button @click="handleBooking(vehicle.name)" class="bg-[#FFC107] hover:bg-[#FFD54F] text-gray-900 font-bold text-[13px] px-5 py-2.5 rounded-xl transition-colors duration-300 flex items-center gap-1.5 shadow-sm">
-                Pesan
+            <!-- Action Button Footer -->
+            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center">
+              <button @click="handleBooking(vehicle.name)" class="w-full bg-[#FFC107] hover:bg-[#FFD54F] text-gray-900 font-bold text-[13px] py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]">
+                <span>Tanya Ketersediaan & Sewa</span>
                 <span class="material-symbols-outlined text-[16px] leading-none">arrow_forward</span>
               </button>
             </div>
