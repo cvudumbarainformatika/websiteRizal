@@ -6,7 +6,7 @@
       <h2 class="text-white font-extrabold text-[22px] md:text-[26px] mb-3 leading-tight tracking-tight">Siap Menyewa<br/>Kendaraan?</h2>
       <p class="text-gray-300 text-[13.5px] mb-8 max-w-sm leading-relaxed">Hubungi kami sekarang dan dapatkan penawaran terbaik untuk Anda!</p>
       
-      <button class="w-full max-w-[300px] bg-[#FFC107] text-gray-900 font-bold text-[14.5px] py-3.5 rounded-[14px] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+      <button @click="openWhatsApp" class="w-full max-w-[300px] bg-[#FFC107] text-gray-900 font-bold text-[14.5px] py-3.5 rounded-[14px] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
         <svg class="w-[18px] h-[18px] text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
         </svg>
@@ -25,7 +25,7 @@
 
       <!-- Social Icons -->
       <div class="flex items-center gap-4 mb-8">
-        <a href="#" class="w-11 h-11 rounded-full border border-[#3F3F46] bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors group">
+        <a href="#" @click.prevent="openWhatsApp" class="w-11 h-11 rounded-full border border-[#3F3F46] bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors group">
           <svg class="w-5 h-5 text-[#22c55e] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
@@ -59,7 +59,14 @@
 
 <script setup>
 import { inject, ref } from 'vue'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const globalSettings = inject('globalSettings', ref({}))
 const logoPlaceholder = '/assets/images/logo-mr-gold.png'
+
+const openWhatsApp = () => {
+  const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+  const wa = formatWhatsAppNumber(rawWa)
+  window.open(`https://wa.me/${wa}?text=Halo%20Master%20Rizal,%20saya%20ingin%20tanya%20sewa%20kendaraan`, '_blank')
+}
 </script>

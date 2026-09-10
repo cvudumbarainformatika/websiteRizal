@@ -102,7 +102,8 @@
                 label="Nomor WhatsApp (Tampilan)"
                 outlined
                 dense
-                hint="Format tampilan, misal: +62 812-3456-7890"
+                hint="Misal: 085330222494 atau +62 853-3022-2494"
+                @update:model-value="onContactWaChange"
               />
             </div>
             <div class="col-12 col-md-6">
@@ -111,7 +112,7 @@
                 label="Nomor WhatsApp (Link API)"
                 outlined
                 dense
-                hint="Format angka tanpa +, misal: 6285330222494"
+                hint="Otomatis dikonversi ke format 628... untuk link WhatsApp"
               />
             </div>
             <div class="col-12">
@@ -152,6 +153,7 @@ import { ref, onMounted } from 'vue'
 import { useQuasar } from 'quasar'
 import SettingController from 'src/backend/controllers/SettingController'
 import ImageUploadField from 'src/components/admin/ImageUploadField.vue'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const $q = useQuasar()
 const isLoading = ref(true)
@@ -173,6 +175,12 @@ onMounted(async () => {
   await loadSettings()
 })
 
+const onContactWaChange = (val) => {
+  if (val) {
+    form.value.contact_wa_link = formatWhatsAppNumber(val)
+  }
+}
+
 const loadSettings = async () => {
   isLoading.value = true
   const { data, error } = await SettingController.fetchSettings()
@@ -184,6 +192,10 @@ const loadSettings = async () => {
         form.value[key] = data[key]
       }
     })
+    // Otomatis bersihkan contact_wa_link jika masih memakai format lokal 08...
+    if (form.value.contact_wa_link) {
+      form.value.contact_wa_link = formatWhatsAppNumber(form.value.contact_wa_link)
+    }
   } else {
     $q.notify({
       color: 'negative',
@@ -197,6 +209,9 @@ const loadSettings = async () => {
 
 const saveSettings = async () => {
   isSaving.value = true
+  
+  // Pastikan format contact_wa_link selalu 628... sebelum disimpan ke database
+  form.value.contact_wa_link = formatWhatsAppNumber(form.value.contact_wa_link || form.value.contact_wa)
   
   const { success, error } = await SettingController.saveSettings(form.value)
   

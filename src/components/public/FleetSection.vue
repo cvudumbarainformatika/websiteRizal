@@ -79,7 +79,7 @@
 import { ref, onMounted, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import VehicleController from 'src/backend/controllers/VehicleController'
-import { formatRupiah } from 'src/backend/helpers/format'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const router = useRouter()
 const globalSettings = inject('globalSettings', ref({}))
@@ -101,7 +101,8 @@ const goToListing = () => {
 
 const handleBooking = (type) => {
   if (type === 'Jangka Panjang') {
-    const wa = globalSettings.value?.contact_wa_link || '6285330222494'
+    const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+    const wa = formatWhatsAppNumber(rawWa)
     const text = encodeURIComponent(`Halo Master Rizal, saya tertarik untuk sewa Jangka Panjang. Bisa minta infonya?`)
     window.open(`https://wa.me/${wa}?text=${text}`, '_blank')
   } else {

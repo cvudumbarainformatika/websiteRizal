@@ -105,7 +105,7 @@ import { useRoute } from 'vue-router'
 import { useMeta } from 'quasar'
 import AppHeader from 'components/global/AppHeader.vue'
 import VehicleController from 'src/backend/controllers/VehicleController'
-import { formatRupiah } from 'src/backend/helpers/format'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const route = useRoute()
 const globalSettings = inject('globalSettings', ref({}))
@@ -163,7 +163,8 @@ const filteredVehicles = computed(() => {
 })
 
 const handleBooking = (name) => {
-  const wa = globalSettings.value?.contact_wa_link || '6285330222494'
+  const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+  const wa = formatWhatsAppNumber(rawWa)
   const text = encodeURIComponent(`Halo Master Rizal, saya tertarik untuk menyewa ${name}. Bisa minta infonya?`)
   window.open(`https://wa.me/${wa}?text=${text}`, '_blank')
 }

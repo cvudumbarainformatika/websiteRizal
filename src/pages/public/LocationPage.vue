@@ -78,6 +78,7 @@
 import { inject, ref } from 'vue'
 import { useMeta } from 'quasar'
 import AppHeader from 'components/global/AppHeader.vue'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const globalSettings = inject('globalSettings', ref({}))
 
@@ -104,7 +105,8 @@ const openGoogleMaps = () => {
 }
 
 const contactWhatsApp = () => {
-  const wa = globalSettings.value?.contact_wa_link || '6285330222494'
+  const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+  const wa = formatWhatsAppNumber(rawWa)
   const text = encodeURIComponent('Halo Master Rizal, saya ingin bertanya tentang sewa kendaraan.')
   window.open(`https://wa.me/${wa}?text=${text}`, '_blank')
 }

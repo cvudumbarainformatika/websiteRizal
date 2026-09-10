@@ -43,15 +43,15 @@
       </div>
       
       <!-- WhatsApp -->
-      <div class="flex items-start gap-4">
+      <div class="flex items-start gap-4 cursor-pointer group" @click="openWhatsApp">
         <div class="flex flex-shrink-0 items-center justify-center">
-          <svg class="w-[26px] h-[26px] text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-[26px] h-[26px] text-gray-900 group-hover:text-green-600 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </div>
         <div class="mt-0.5">
-          <h4 class="text-gray-900 font-extrabold text-[15px] mb-0.5 leading-none tracking-tight">WhatsApp</h4>
-          <p class="text-gray-600 text-[13px] leading-snug">{{ globalSettings.contact_wa || '+62 812-3456-7890' }}</p>
+          <h4 class="text-gray-900 font-extrabold text-[15px] mb-0.5 leading-none tracking-tight group-hover:text-green-600 transition-colors">WhatsApp</h4>
+          <p class="text-gray-600 text-[13px] leading-snug group-hover:underline">{{ globalSettings.contact_wa || '+62 812-3456-7890' }}</p>
         </div>
       </div>
       
@@ -73,6 +73,7 @@
 <script setup>
 import { inject, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const router = useRouter()
 const globalSettings = inject('globalSettings', ref({}))
@@ -80,5 +81,11 @@ const globalSettings = inject('globalSettings', ref({}))
 const openGoogleMaps = () => {
   const url = globalSettings.value?.contact_map_link || 'https://www.google.com/maps/place/Master+Rizal+Rent+Car+%26+Motor+Bike/@-7.7778151,113.1694412,17z'
   window.open(url, '_blank')
+}
+
+const openWhatsApp = () => {
+  const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+  const wa = formatWhatsAppNumber(rawWa)
+  window.open(`https://wa.me/${wa}?text=Halo%20Master%20Rizal,%20saya%20ingin%20tanya%20sewa%20kendaraan`, '_blank')
 }
 </script>

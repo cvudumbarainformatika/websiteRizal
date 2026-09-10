@@ -53,6 +53,7 @@
 <script setup>
 import { inject, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const router = useRouter()
 const globalSettings = inject('globalSettings', ref({}))
@@ -64,7 +65,7 @@ const formattedHeroTitle = computed(() => {
 })
 
 const openWhatsApp = (link) => {
-  const wa = link || '6285330222494'
+  const wa = formatWhatsAppNumber(link || globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa)
   window.open(`https://wa.me/${wa}?text=Halo%20Master%20Rizal,%20saya%20ingin%20tanya%20sewa%20kendaraan`, '_blank')
 }
 

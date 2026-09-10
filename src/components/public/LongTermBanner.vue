@@ -38,11 +38,13 @@
 <script setup>
 import { inject, ref } from 'vue'
 import xpanderImg from 'assets/images/car_xpander.jpg'
+import { formatWhatsAppNumber } from 'src/backend/helpers/format'
 
 const globalSettings = inject('globalSettings', ref({}))
 
 const openWhatsApp = () => {
-  const wa = globalSettings.value?.contact_wa_link || '6285330222494'
+  const rawWa = globalSettings.value?.contact_wa_link || globalSettings.value?.contact_wa
+  const wa = formatWhatsAppNumber(rawWa)
   window.open(`https://wa.me/${wa}?text=Halo%20Master%20Rizal,%20saya%20tertarik%20sewa%20jangka%20panjang%20(mingguan/bulanan)`, '_blank')
 }
 </script>
