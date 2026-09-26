@@ -62,8 +62,8 @@
           </div>
           <div class="mt-1">
             <h4 class="text-gray-900 font-extrabold text-[16px] mb-1 leading-none tracking-tight">Jam Operasional</h4>
-            <p class="text-gray-600 text-[14px] leading-relaxed flex flex-col gap-1">
-              <span class="flex justify-between w-40"><span>Setiap Hari</span><span class="font-bold text-[#FFC107]">Buka 24 Jam</span></span>
+            <p class="text-gray-600 text-[14px] leading-relaxed">
+              {{ globalSettings.operational_hours || 'Setiap Hari 05.00 - 24.00 WIB' }}
             </p>
           </div>
         </div>

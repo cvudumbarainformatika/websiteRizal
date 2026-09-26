@@ -62,7 +62,7 @@
         </div>
         <div class="mt-0.5">
           <h4 class="text-gray-900 font-extrabold text-[15px] mb-0.5 leading-none tracking-tight">Jam Operasional</h4>
-          <p class="text-gray-600 text-[13px] leading-snug">Setiap Hari 07.00 - 21.00 WIB</p>
+          <p class="text-gray-600 text-[13px] leading-snug">{{ globalSettings.operational_hours || 'Setiap Hari 05.00 - 24.00 WIB' }}</p>
         </div>
       </div>
 

@@ -134,6 +134,15 @@
                 hint="Link URL saat tombol 'Lihat di Google Maps' diklik"
               />
             </div>
+            <div class="col-12">
+              <q-input
+                v-model="form.operational_hours"
+                label="Jam Operasional"
+                outlined
+                dense
+                hint="Misal: Setiap Hari 05.00 - 24.00 WIB"
+              />
+            </div>
           </div>
         </q-card-section>
       </q-card>
@@ -168,7 +177,8 @@ const form = ref({
   contact_wa: '',
   contact_wa_link: '',
   contact_address: '',
-  contact_map_link: ''
+  contact_map_link: '',
+  operational_hours: ''
 })
 
 onMounted(async () => {
@@ -192,6 +202,10 @@ const loadSettings = async () => {
         form.value[key] = data[key]
       }
     })
+    // Default fallback jika belum pernah diatur di DB
+    if (!form.value.operational_hours) {
+      form.value.operational_hours = 'Setiap Hari 05.00 - 24.00 WIB'
+    }
     // Otomatis bersihkan contact_wa_link jika masih memakai format lokal 08...
     if (form.value.contact_wa_link) {
       form.value.contact_wa_link = formatWhatsAppNumber(form.value.contact_wa_link)
